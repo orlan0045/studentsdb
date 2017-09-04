@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from students.views import students, groups
+from students.views import students, groups, journal
 from .settings import MEDIA_ROOT, DEBUG
 from django.conf import settings
 
@@ -34,6 +34,9 @@ urlpatterns = [
 		url(r'^groups/add/$', groups.groups_add, name='groups_add'),
 		url(r'^groups/(?P<gid>\d+)/edit/$', groups.groups_edit, name='groups_edit'),
 		url(r'^groups/(?P<gid>\d+)/delete/$', groups.groups_delete, name='groups_delete'),
+
+#Journal
+		url(r'^journal/$', journal.journal, name='journal'),
 
 		url(r'^admin/', include(admin.site.urls)),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

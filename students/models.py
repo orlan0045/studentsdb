@@ -90,3 +90,22 @@ class Group(models.Model):
 			#return u"%s (%s %s)" % (self.title, self.leader.first_name,	self.leader.last_name)
 		else:
 			return u"%s" % (self.title,)
+
+
+
+class Journal(models.Model):
+	"""Journals Model"""
+
+	class Meta(object):
+				verbose_name = u"Журнал"
+				verbose_name_plural = u"Журнал"	
+
+
+	journal_group = models.ForeignKey('Group',
+		verbose_name = u'Група',
+		blank = False,
+		null = True,
+		on_delete = models.PROTECT)
+
+	def __unicode__(self):
+		return u"%s"%(self.journal_group.title)

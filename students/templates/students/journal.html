@@ -1,0 +1,101 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Відвідування{% endblock meta_title %}
+
+{% block title %}База Студентів{% endblock title %}
+
+{% block content %}
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Група</th>
+      <th>Січень</th>
+      <th>Лютий</th>
+      <th>Березень</th>
+      <th>Квітень</th>
+      <th>Травень</th>
+      <th>Червень</th>
+      <th>Липень</th>
+      <th>Серпень</th>
+      <th>Вересень</th>
+      <th>Жовтень</th>
+      <th>Листопад</th>
+      <th>Грудень</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for journal in journal %}
+      <tr>
+        <th scope="row">{{journal.journal_group.title}}</th>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+        <td><div class="form-check">
+  <label class="form-check-label">
+    <input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+  </label>
+</div></td>
+      </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+  
+{% endblock content %}
+
