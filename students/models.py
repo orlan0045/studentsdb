@@ -109,3 +109,37 @@ class Journal(models.Model):
 
 	def __unicode__(self):
 		return u"%s"%(self.journal_group.title)
+
+
+
+class Exam(models.Model):
+	"""Exams Model"""
+
+	class Meta(object):
+				verbose_name = u"Екзамен"
+				verbose_name_plural = u"Екзамени"
+
+	exam_name = models.CharField(
+		max_length=256,
+		blank=False,
+		verbose_name=u"Назва")
+
+	# leader = models.OneToOneField('Student',
+	# 	verbose_name=u"Староста",
+	# 	blank=True,
+	# 	null=True,
+	# 	on_delete=models.SET_NULL)
+
+	exam_date = models.DateField(
+		blank = False,
+		verbose_name = u'Дата екзамену',
+		null = True)
+
+	exam_group = models.ForeignKey('Group',
+		verbose_name = u'Група',
+		blank = False,
+		null = True,
+		on_delete = models.PROTECT)
+
+	def __unicode__(self):
+		return u"%s" % (self.exam_name,)
